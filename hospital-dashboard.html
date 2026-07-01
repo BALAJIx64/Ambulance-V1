@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Dashboard</title>
+
+    <link rel="stylesheet" href="hospital-dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet"
+href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
+    <!-- Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        🏥
+        <h2 id="hospitalName">Hospital</h2>
+    </div>
+
+    <ul>
+
+        <li class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </li>
+
+        <li>
+            <i class="fa-solid fa-user"></i>
+            Patients
+        </li>
+
+        <li>
+            <i class="fa-solid fa-chart-line"></i>
+            Analytics
+        </li>
+
+        <li>
+            <i class="fa-solid fa-bell"></i>
+            Notifications
+        </li>
+
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+    
+
+    <header>
+
+        <div>
+
+            <h1>
+    Welcome, <span id="welcomeHospital">Hospital</span> 👋
+</h1>
+            <p>
+                Real-time Ambulance Monitoring Dashboard
+            </p>
+
+        </div>
+
+        <i class="fa-solid fa-bell bell"></i>
+
+    </header>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h2 id="totalPatients">0</h2>
+
+            <p>Total Patients</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="criticalPatients">0</h2>
+
+            <p>Critical Cases</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="highPatients">0</h2>
+
+            <p>High Risk</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="lowPatients">0</h2>
+
+            <p>Low Risk</p>
+
+        </div>
+
+    </div>
+<div class="patientSection">
+
+    <h2>Incoming Patients</h2>
+
+    <div id="patientList"></div>
+
+    <div id="map"></div>
+    <div id="patientInfo" class="patient-info">
+
+    <h3>🚑 Selected Ambulance</h3>
+
+    <p>Select a patient to view details.</p>
+
+</div>
+
+</div>
+
+</div>
+<div id="notification" class="notification">
+
+    <h3>🚑 New Ambulance Alert</h3>
+
+    <p id="notificationText"></p>
+
+</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+<script type="module" src="hospital-dashboard.js"></script>
+
+</body>
+</html>

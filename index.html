@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Ambulance Traffic Clearance System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+
+            🚑
+
+        </div>
+
+        <h1>Smart Ambulance</h1>
+
+        <p class="subtitle">
+            Traffic Clearance System
+        </p>
+
+        <div class="inputBox">
+
+            <label>
+                <i class="fa-solid fa-user"></i>
+                Patient Name
+            </label>
+
+            <input
+                type="text"
+                id="patientName"
+                placeholder="Enter patient name">
+
+        </div>
+
+        <div class="inputBox">
+
+            <label>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Risk Level
+            </label>
+
+            <select id="riskLevel">
+
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+                <option>Critical</option>
+
+            </select>
+
+        </div>
+
+        <div class="inputBox">
+
+            <label>
+                <i class="fa-solid fa-hospital"></i>
+                Nearby Hospital
+            </label>
+
+            <select id="hospitalName">
+
+                <option value="">
+                    Getting nearby hospitals...
+                </option>
+
+            </select>
+
+        </div>
+        <div class="gpsStatus">
+
+    <i class="fa-solid fa-location-dot"></i>
+
+    <span id="gpsStatus">
+        Detecting your current location...
+    </span>
+
+</div>
+
+        <button onclick="submitData()">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Submit Patient
+
+        </button>
+
+    </div>
+<div id="successPopup" class="successPopup">
+
+    <div class="checkmark">
+        ✓
+    </div>
+
+    <h2>Patient Registered</h2>
+
+    <p id="successMessage"></p>
+
+</div>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

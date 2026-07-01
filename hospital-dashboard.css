@@ -1,0 +1,664 @@
+/* ==========================
+   GLOBAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f4f8fb;
+    display:flex;
+    min-height:100vh;
+
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+
+    width:250px;
+    background:linear-gradient(180deg,#1565C0,#0D47A1);
+    color:white;
+    padding:30px 20px;
+
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+
+    box-shadow:5px 0 20px rgba(0,0,0,0.15);
+
+}
+
+.logo{
+
+    text-align:center;
+    margin-bottom:50px;
+
+}
+
+.logo h2{
+
+    margin-top:15px;
+    font-size:24px;
+    font-weight:600;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar ul li{
+
+    padding:16px;
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    font-size:17px;
+
+}
+
+.sidebar ul li:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.sidebar ul li.active{
+
+    background:white;
+    color:#1565C0;
+    font-weight:600;
+
+}
+
+/* ==========================
+   MAIN AREA
+========================== */
+
+.main{
+
+    margin-left:250px;
+
+    width:100%;
+
+    padding:35px;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+header h1{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+}
+
+header p{
+
+    color:#64748b;
+
+    margin-top:8px;
+
+}
+
+.bell{
+
+    font-size:24px;
+
+    color:#1565C0;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.bell:hover{
+
+    transform:rotate(20deg) scale(1.1);
+
+}
+/* ==========================
+   DASHBOARD CARDS
+========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.card h2{
+
+    font-size:38px;
+
+    color:#1565C0;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    color:#64748b;
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   PATIENT SECTION
+========================== */
+
+.patientSection{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.patientSection h2{
+
+    margin-bottom:25px;
+
+    color:#1e293b;
+
+    font-size:28px;
+
+}
+
+#patientList{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+
+    gap:20px;
+
+}
+/* ==========================
+   PATIENT CARDS
+========================== */
+
+.patient-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-left:7px solid #1565C0;
+
+}
+
+.patient-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.patient-card h3{
+
+    color:#1e293b;
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+}
+
+.patient-card p{
+
+    margin:10px 0;
+
+    color:#475569;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+.patient-card b{
+
+    color:#0f172a;
+
+}
+
+/* Risk Colors */
+
+.low{
+
+    border-left:8px solid #2ecc71;
+
+}
+
+.medium{
+
+    border-left:8px solid #f39c12;
+
+}
+
+.high{
+
+    border-left:8px solid #e67e22;
+
+}
+
+.critical{
+
+    border-left:8px solid #e53935;
+
+}
+
+/* Risk Badge */
+
+.riskBadge{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.low .riskBadge{
+
+    background:#2ecc71;
+
+}
+
+.medium .riskBadge{
+
+    background:#f39c12;
+
+}
+
+.high .riskBadge{
+
+    background:#e67e22;
+
+}
+
+.critical .riskBadge{
+
+    background:#e53935;
+
+}
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eef3f8;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#1565C0;
+    border-radius:10px;
+}
+
+/* ==========================
+   FADE ANIMATION
+========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.card,
+.patient-card,
+.patientSection{
+
+    animation:fadeUp .6s ease;
+
+}
+
+/* ==========================
+   NICE CARD TOP BAR
+========================== */
+
+.card{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:6px;
+
+    background:linear-gradient(
+        90deg,
+        #1565C0,
+        #42A5F5
+    );
+
+}
+
+/* ==========================
+   HOVER EFFECT
+========================== */
+
+.sidebar ul li{
+
+    position:relative;
+
+}
+
+.sidebar ul li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:5px;
+    height:100%;
+
+    background:white;
+
+    transform:scaleY(0);
+
+    transition:.3s;
+
+}
+
+.sidebar ul li:hover::before{
+
+    transform:scaleY(1);
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1100px){
+
+.cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:800px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.main{
+
+margin-left:0;
+
+padding:20px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+header{
+
+flex-direction:column;
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+#patientList{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ==========================
+   HEADER GLASS EFFECT
+========================== */
+
+header{
+
+background:white;
+
+padding:25px;
+
+border-radius:18px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   PAGE BACKGROUND
+========================== */
+
+body{
+
+background:linear-gradient(
+135deg,
+#eef5ff,
+#f9fbfd
+);
+
+}
+/* ==========================
+   NOTIFICATION POPUP
+========================== */
+
+.notification{
+
+    position:fixed;
+
+    top:30px;
+    right:-420px;
+
+    width:340px;
+
+    background:white;
+
+    border-left:6px solid #1565C0;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    transition:.5s;
+
+    z-index:9999;
+
+}
+
+.notification.show{
+
+    right:25px;
+
+}
+
+.notification h3{
+
+    color:#1565C0;
+
+    margin-bottom:10px;
+
+}
+
+.notification p{
+
+    color:#555;
+
+    line-height:1.6;
+
+}
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.patient-info{
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+    font-family:Poppins,sans-serif;
+
+}
+
+.patient-info h3{
+
+    margin-bottom:10px;
+
+    color:#1565C0;
+
+}
+
+.patient-info p{
+
+    margin:8px 0;
+
+    font-size:15px;
+
+}
