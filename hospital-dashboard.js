@@ -44,7 +44,7 @@ const ambulanceIcon = L.icon({
     popupAnchor: [0, -20]
 
 });
-const currentHospitalId = localStorage.getItem("hospitalId");
+const currentHospitalId = localStorage.getItem("uid");
 
 console.log("Hospital ID:", currentHospitalId);
 
@@ -102,6 +102,11 @@ function showPatientRoute(patient) {
     // Draw new route
     routingControl = L.Routing.control({
 
+    lineOptions: {
+        styles: [
+            { color: "blue", weight: 6, opacity: 0.8 }
+        ]
+    },
     waypoints: [
         L.latLng(patient.latitude, patient.longitude),
         L.latLng(patient.hospitalLatitude, patient.hospitalLongitude)
@@ -147,6 +152,10 @@ console.log(info.innerHTML);
 })
 
 .addTo(map);
+
+setTimeout(() => {
+    console.log(routingControl);
+}, 1000);
 
 }
 onSnapshot(q, (snapshot) => {
@@ -207,35 +216,7 @@ if (
     `);
 
 }
-/*if (routingControl) {
-    routingControl.remove();
-    routingControl = null;
-}
 
-routingControl = L.Routing.control({
-
-    waypoints: [
-
-        L.latLng(patient.latitude, patient.longitude),
-
-        L.latLng(
-            patient.hospitalLatitude,
-            patient.hospitalLongitude
-        )
-
-    ],
-
-    routeWhileDragging: false,
-
-    addWaypoints: false,
-
-    draggableWaypoints: false,
-
-    fitSelectedRoutes: true,
-
-    show: false
-
-}).addTo(map);*/
 ambulanceMarker.bindPopup(`
         🚑 <b>${patient.patientName}</b><br>
         Risk: ${patient.riskLevel}

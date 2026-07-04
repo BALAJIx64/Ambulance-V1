@@ -3,9 +3,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebas
 import {
     getFirestore,
     collection,
-    addDoc
+    addDoc,
+    doc,
+    setDoc
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-
 import {
     getAuth,
     createUserWithEmailAndPassword
@@ -88,9 +89,15 @@ const userCredential = await createUserWithEmailAndPassword(
 const uid = userCredential.user.uid;
 
 // 3. Save Hospital Details in Firestore
-await addDoc(collection(db, "hospitals"), {
+// 3. Create user role document
+await setDoc(doc(db, "users", uid), {
 
-    uid: uid,
+    role: "hospital"
+
+});
+
+// 4. Save Hospital Details
+await setDoc(doc(db, "hospitals", uid), {
 
     englishName,
 
